@@ -4,6 +4,11 @@ const path = require('path');
 let rutaMain = require('./routes/main');
 let rutaDelivery = require('./routes/delivery');
 let rutaSalimos = require('./routes/salimos');
+app.use(express.static('./public'));
+
+
+app.set('view engine', 'ejs');
+//seteo el modelo de motor de vistas con EJS
 
 
 
