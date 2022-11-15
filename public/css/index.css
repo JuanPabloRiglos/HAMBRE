@@ -1,0 +1,50 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+colores{
+  background-color: #f5efd7;
+  background-color: #b9a0eb;
+  background-color: #25242a;
+  background-color: white;
+}
+html {
+    font-family: 'Caveat', cursive;;
+    font-size: 18px;
+}
+body {
+    display: flex;
+    flex-flow: column nowrap;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    background-color: #f5efd7;
+}
+header{
+    display: flex;
+    background-color: white;
+    width: 100%;
+    margin: 0;
+}
+.img{
+    margin: auto;
+    width: 20vw;
+}
+h1{
+    color: #b9a0eb;
+    margin: auto;
+}
+p{
+    color: #25242a;
+    margin: auto;
+    padding: 3% 10%;
+    text-transform: capitalize;
+}
+.boton{
+    width: 20vw;
+    margin: auto;
+}
+.a{
+    text-decoration: none;
+}
