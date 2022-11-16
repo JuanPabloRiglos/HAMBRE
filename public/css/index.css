@@ -19,7 +19,7 @@ body {
     width: 100%;
     height: auto;
     margin: 0;
-    background-color: #f5efd7;
+    background-color: #dd1d1d;
 }
 header{
     display: flex;
@@ -32,7 +32,7 @@ header{
     width: 20vw;
 }
 h1{
-    color: #b9a0eb;
+    color: #fffd79;
     margin: auto;
 }
 p{
@@ -47,4 +47,7 @@ p{
 }
 .a{
     text-decoration: none;
+}
+.formularioRegistro{
+    margin: auto;
 }

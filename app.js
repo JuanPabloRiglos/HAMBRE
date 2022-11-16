@@ -4,6 +4,7 @@ const path = require('path');
 let rutaMain = require('./routes/main');
 let rutaDelivery = require('./routes/delivery');
 let rutaSalimos = require('./routes/salimos');
+let rutaUsuarios = require('./routes/usuarios');
 let methodOverride = require('method-override')
 app.use(express.static('./public'));
 
@@ -24,3 +25,4 @@ app.listen(5005, ()=> console.log('corriendo en puerto 5005'));
 app.use('/', rutaMain);
 app.use('/delivery', rutaDelivery);
 app.use('/salimos', rutaSalimos);
+app.use('/usuarios', rutaUsuarios);
