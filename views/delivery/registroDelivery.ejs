@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('../partials/head') %>
+  <header>
+    <img class="img" src="/images/Hambre.gif" />
+  </header>
+  <body>
+    <h1>Comparti tu experiencia</h1>
+    <form method="POST" action="delivery/registroDelivery">
+      <section>
+        <div>
+          <label for="producto">producto</label>
+          <input type="text" nombre="producto" />
+        </div>
+      </section>
+      <section>
+        <div>
+          <label for="plato">plato</label>
+          <input type="text" nombre="plato" />
+        </div>
+      </section>
+      <section>
+        <div>
+          <label for="Resto o Local">nombre del Resto o Local</label>
+          <input type="text" nombre="Resto o Local" />
+        </div>
+      </section>
+      <section>
+        <div>
+          <label for="descripcion">descripcion</label>
+          <input type="text" nombre="descripcion" />
+        </div>
+      </section>
+      <section>
+        <div>
+          <label for="apto vegano">apto vegano</label>
+          <input type="text" nombre="apto vegano" />
+        </div>
+      </section>
+      <section>
+        <div>
+          <label for="precio">precio</label>
+          <input type="text" nombre="precio" />
+        </div>
+      </section>
+      <section>
+        <div>
+          <label for="puntuacion">puntuacion</label>
+          <input type="text" nombre="puntuacion" />
+        </div>
+      </section>
+      <section>
+        <div>
+          <label for="comentarios">comentarios</label>
+          <input type="text" nombre="comentarios" />
+        </div>
+      </section>
+    </form>
+  </body>
+</html>
