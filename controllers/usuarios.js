@@ -4,7 +4,7 @@ let usuariosController = {
         res.render('usuarios/usuariosRegister.ejs') 
     },
     crear: function(req,res){
-        res.send(req.body)
+        res.send("fui re put")
     }
 }
 module.exports = usuariosController;
