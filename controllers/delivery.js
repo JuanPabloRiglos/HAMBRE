@@ -12,7 +12,16 @@ let deliveryController = {
        res.render('delivery/registroDelivery')
     },
     guardarProducto : function(req, res){ // !! guarda los datos del producto creado.
+        //genero id de producto
+        let id ;
+        if(productosEnDB.length == [] ){
+            //si esta vacia el id = 1
+            id = 1;} else {
+            // Si ya hay productos el id va a ser el numero del ulitmo id + 1 
+         id = productosEnDB[productosEnDB.length - 1 ].id + 1};
+
         let newProduct = {
+            id ,
             ...req.body,
             //trae todo lo que se envio en el formulario y lo guarda
         };
