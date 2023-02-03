@@ -61,21 +61,30 @@ let deliveryController = {
     editProduct: function(req, res){
         //////////////////////////////////// Guarda los datos editados previamente
         let idBuscado = Number(req.params.id);
-       
-        let editedProduct = {
+        let producToEdit = productosEnDB.find(producto => producto.id == idBuscado);
+
+        producToEdit = {
             id : idBuscado ,
             ...req.body,
             //trae todo lo que se envio en el formulario y lo guarda
         };
         const updateProduct = productosEnDB.map((p) => {
             if(p.id == idBuscado){
-                return ( p = {...editedProduct})
+                return ( p = {...producToEdit})
             }else{
                 return p
             }
         })
         fs.writeFileSync(productosFilePath, JSON.stringify( updateProduct,'utf-8'));
-        res.render('delivery/dProductDetail', {product : editedProduct})
+        res.render('delivery/dProductDetail', {product : producToEdit})
+    },
+    
+    destroyProduct: function(req, res){
+        /// Elimina producto delivery
+        let idToDelette = Number(req.params.id);
+        let productsSaved = productosEnDB.filter((p) => p.id != idToDelette);
+        fs.writeFileSync(productosFilePath, JSON.stringify( productsSaved,'utf-8'));
+        res.render('delivery/dProducts', {productosEnDB : productsSaved})
     }
 }
 module.exports = deliveryController;
