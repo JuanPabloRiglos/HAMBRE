@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('../partials/head') %>
+  <header>
+    <img class="img" src="/images/Hambre.gif" />
+  </header>
+  <body>
+    <h1>empeza a disfrutar tu experiencia</h1>
+    <Main>
+      <% productosEnDB.forEach(product => { %>
+      <section class="product-box">
+        <h2>opcíon N° <%= product.id %> = <%= product.plato%></h2>
+        <div class="Producto-palto">
+          <label for="plato">plato</label>
+          <input
+            type="text"
+            name="plato"
+            placeholder=" <%= product.plato %> "
+          />
+        </div>
+        <div class="product-RestoOLocal">
+          <label for="RestoOLocal">nombre del Resto o Local</label>
+          <input
+            type="text"
+            name="RestoOLocal"
+            placeholder=" <%= product.RestoOLocal %> "
+          />
+        </div>
+        <div class="product-descripcion">
+          <label for="descripcion">descripcion</label>
+          <input
+            type="text"
+            name="descripcion"
+            placeholder=" <%= product.descripcion %> "
+          />
+        </div>
+        <div class="product-aptoVegano">
+          <label for="aptoVegano">apto vegano</label>
+          <input
+            type="text"
+            name="aptoVegano"
+            placeholder=" <%= product.aptoVegano %> "
+          />
+        </div>
+        <div class="product-precio">
+          <label for="precio">precio</label>
+          <input
+            type="text"
+            name="precio"
+            placeholder=" <%= product.precio %> "
+          />
+        </div>
+        <div class="product-puntuacion">
+          <label for="puntuacion">puntuacion</label>
+          <input
+            type="text"
+            name="puntuacion"
+            placeholder=" <%= product.puntuacion %> "
+          />
+        </div>
+        <div class="product-comentarios">
+          <label for="comentarios">comentarios</label>
+          <input
+            type="text"
+            name="comentarios"
+            placeholder=" <%= product.comentarios %> "
+          />
+        </div>
+        <button class="boton" type="submit">
+          <a href="/delivery/dProductDetail/<%= product.id %>">
+            <strong>Ver productos</strong></a
+          >
+        </button>
+      </section>
+      <br />
+
+      <% });%>
+    </Main>
+  </body>
+</html>
