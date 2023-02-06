@@ -6,7 +6,8 @@
   </header>
   <body>
     <h1>Detalle de tu experiencia</h1>
-    <form method="POST" action="/delivery/dProductDetail/<%= product.id %>?_method=PATCH">
+    <form method="POST" action="/delivery/dProductDetail/<%= product.id %>?_method=PATCH" enctype="multipart/form-data">
+        <!-- El Enctype es el seteo para poder cargar imagenes por medio del paquete npm multer-->>
       <section>
         <div>
                 <section class="product-box">
@@ -18,6 +19,11 @@
                       name="plato"
                       placeholder=" <%= product.plato %> "
                     />
+                  </div>
+                  <img class="img" src="/images/delivery/<%= product.image %> " />
+                  <div>
+                    <label for="imagen"> carga tu nueva foto!</label>
+                    <input type="file" name="image" id="imagen" />>
                   </div>
                   <div class="product-RestoOLocal">
                     <label for="RestoOLocal">nombre del Resto o Local</label>
@@ -74,5 +80,10 @@
     <form method="POST" action="/delivery/dProductDetail/<%= product.id %>?_method=DELETE">
         <input type="submit" value="Eliminar" />
     </form>
+    <button class="boton" type="submit">
+      <a href="/delivery/dproducts">
+        <strong>Ver productos</strong></a
+      >
+    </button>
   </body>
 </html>

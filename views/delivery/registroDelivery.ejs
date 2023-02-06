@@ -6,7 +6,12 @@
   </header>
   <body>
     <h1>Comparti tu experiencia</h1>
-    <form method="POST" action="/delivery/registroDelivery">
+    <form
+      method="POST"
+      action="/delivery/registroDelivery"
+      enctype="multipart/form-data"
+    >
+      <!-- El Enctype es el seteo para poder cargar imagenes por medio del paquete npm multer-->
       <section>
         <div>
           <label for="producto">producto</label>
@@ -53,6 +58,10 @@
         <div>
           <label for="comentarios">comentarios</label>
           <input type="text" name="comentarios" />
+        </div>
+        <div>
+          <label for="imagen"> carga tu foto!</label>
+          <input type="file" name="image" id="imagen" />
         </div>
       </section>
       <input type="submit" value="Cargar" />

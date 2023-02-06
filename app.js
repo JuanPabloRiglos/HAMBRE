@@ -6,6 +6,7 @@ let rutaDelivery = require('./routes/delivery');
 let rutaSalimos = require('./routes/salimos');
 let rutaUsuarios = require('./routes/usuarios');
 let methodOverride = require('method-override');
+// multer instalado con npm para manejo de archivos de imagen, requerido en el ruteador.
 app.use(express.static(path.join(__dirname , './public')));
 
 
