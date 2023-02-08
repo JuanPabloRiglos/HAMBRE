@@ -4,7 +4,7 @@ let multer = require('multer');
 let path = require ('path')
 let deliveryController = require('../controllers/delivery');
 
-//**** configuracion de Multer para carga de imagenes */
+//**** configuracion de Multer para carga de imagenes  = muler Delivery*/
 const storage = multer.diskStorage({
     destination : function(req, file, cb){
         let folder = path.join(__dirname, '../public/images/delivery');// declara la carpeta destino
