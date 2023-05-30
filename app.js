@@ -7,6 +7,7 @@ let rutaSalimos = require('./routes/salimos');
 let rutaUsuarios = require('./routes/usuarios');
 let methodOverride = require('method-override');
 // multer instalado con npm para manejo de archivos de imagen, requerido en el ruteador.
+// se instalo express-validator para validar los campos, ejemplo usuario- se implementa en la vista correspondiente.
 app.use(express.static(path.join(__dirname , './public')));
 
 
@@ -18,7 +19,7 @@ app.set('view engine', 'ejs');
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
-//lineas previas NECESARIAS para poder guardar lo que venga por post, y para poder pasarlo a JSON
+//lineas previas NECESARIAS para poder guardar lo que venga por post en el body, y para poder pasarlo a JSON
 app.use(methodOverride('_method'));
 //seteo para usar put y delete
 

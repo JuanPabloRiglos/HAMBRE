@@ -1,38 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-  <%- include('../partials/head') %>
-  <%- include('../partials/header')%>
-  <body >
-      <div >
-        <p>ESTE SERIA EL FORMULARIO DE REGISTRO</p> 
-      </div>
-      <form method="POST" action="/usuarios/usuariosRegister">
-        <section>
-          <div>
-            <label for="nombre"> Nombre </label> 
-            <input type="text" name="nombre"/>
-          </div>
-          <div>
-            <label for="email"> Email </label>
-            <input type="email" name="email"/>
-          </div>
-          <div>
-            <label for="contraseña"> Contraseña </label>
-            <input type="password" name="contraseña" />
-          </div>
-          <div>
-            <label> Edad </label>
-            <input type="number" name="edad">
-          </div>
-          <div>
-            <h3> Avatar </h3>
-            <input type="file" name="avatar" accept=".png, .jpg, .bmp, .webp .gif">
-          </div>
-        </section>
-        <button type="submit">
-          Registrarme
-        </button>
-        </form>
-  </body> 
+  <%- include('../partials/head') %> <%- include('../partials/header')%>
+  <body>
+    <div>
+      <p>ESTE SERIA EL FORMULARIO DE REGISTRO</p>
+    </div>
+    <form method="POST" action="/usuarios/usuariosRegister" enctype="multipart/form-data">
+      <section>
+      
+        <!-- Si vienen errores esto resuelve en truly, por lo que se genera el if-->
+        <% if (locals && locals.uservalidations) { %>
+        
+        <% }  %>
+          <label for="nombre"> Nombre </label>
+          <input type="text" name="nombre" 
+          value="<%= locals.oldData ? oldData.nombre : null %>"/>
+          <% if (locals.uservalidations && uservalidations.nombre) { %>
+            <div> <%= uservalidations.nombre.msg %> </div>
+          <% } %>
+        </div>
+        <div>
+          <label for="email"> Email </label>
+          <input type="text" name="email"
+          value="<%= locals.oldData ? oldData.email : null %>" />
+          <% if (locals.uservalidations && uservalidations.email) { %>
+            <div> <%= uservalidations.email.msg %> </div>
+          <% } %>
+        </div>
+        <div>
+          <label for="contraseña"> Contraseña </label>
+          <input type="password" name="contraseña" />
+          <% if (locals.uservalidations && uservalidations.contraseña) { %>
+            <div> <%= uservalidations.contraseña.msg %> </div>
+          <% } %>
+        </div>
+        <div>
+          <label> Edad </label>
+          <input type="number" name="edad" />
+        </div>
+        <div>
+          <label for="avatar">Avatar</label>
+          <input
+            type="file" name="avatar" />
+        </div>
+      </section>
+      <button type="submit">Registrarme</button>
+    </form>
+  </body>
   <%- include('../partials/footer')%>
 </html>
